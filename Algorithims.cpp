@@ -50,6 +50,7 @@ void Algorithims::insertion_sort(int n)
     bool swap_was_made = false;
     int j = 1;
 
+    std::cout<<"Unsorted: ";
     test(n);
     while (j!=(function_count))
     {
@@ -59,14 +60,11 @@ void Algorithims::insertion_sort(int n)
             {
                 swap(i,j);
                 swap_was_made = true;
-                //test(n);
-               // std::cout<<"Swap " << i+1 << " and " << j+1 << '\n';
-                
             }
         }
         j++;
     }
-    test(n);
+    std::cout<<"Sorted: n="<<n<<": "; test(n);
 }
 
 
@@ -75,7 +73,7 @@ void Algorithims::print_labels()
     for (int i = 0; i < function_count; i++)
     {
         results<<labels[i]<<',';
-        std::cout<<labels[i]<<',';
+        std::cout<<labels[i]<<", ";
     }
     results<<'\n';
     std::cout<<'\n';
@@ -88,7 +86,7 @@ void Algorithims::test(int n)
     for (int i = 0; i < function_count; i++)
     {
         results<<f_ptrs[i](n)<<',';
-        std::cout<<f_ptrs[i](n)<<',';
+        std::cout<<f_ptrs[i](n)<<", ";
     }
     results<<'\n';
     std::cout<<'\n';
