@@ -1,5 +1,5 @@
 # Installation
-`gcc Algorithims.cpp`
+`g++ Algorithims.cpp`
 
 # Usage
 If you are on windows, before you run the executable make sure you run
