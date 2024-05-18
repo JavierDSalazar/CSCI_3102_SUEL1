@@ -150,7 +150,11 @@ void Algorithims::write_to_file()
     f.close();
 
     std::stringstream command;
-    command << "notepad " << name << "&";
+    #ifdef _WIN32
+        command << "notepad " << name << &;
+    #else
+        command << "nano " << name; // On Unix-like systems, use xdg-open
+    #endif
     system(command.str().c_str());
 
 }
