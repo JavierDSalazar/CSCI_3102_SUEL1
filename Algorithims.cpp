@@ -48,23 +48,8 @@ double f7(int n)
     return pow(n, 3);
 }
 
-void Algorithims::generate_random_array()
-{
-    srand(time(0));
-    for (int i = 0; i < arr_len; i++)
-    {
-        arr[i] = rand() % 100;
-    }
-    for (int i = 0; i < arr_len; i++)
-    {
-        std::cout << arr[i] << ' ';
-    }
-    std::cout << '\n';
-    
-    
-}
 //todo: templatize
-void Algorithims::swap(int idx1,  int idx2)
+void Algorithims::swap(int idx1, int idx2)
 {
     double    (*tmp_fn_ptr)(int) = f_ptrs[idx1];
     std::string tmp_str          = labels[idx1];
@@ -74,21 +59,67 @@ void Algorithims::swap(int idx1,  int idx2)
     labels[idx2]                 = tmp_str     ;
 }
 
-void Algorithims::insertion_sort(double arr[], int arr_len)
+void Algorithims::arr_swap(int idx1, int idx2)
 {
+    double tmp = arr[idx1];
+    arr[idx1]  = arr[idx2];
+    arr[idx2]  = tmp;
+}
+
+void Algorithims::generate_random_array()
+{
+    std::cout<<"Unsorted\n";
+    srand(time(0));
+    for (int i = 0; i < arr_len; i++)
+    {
+        arr[i] = rand() % 100;
+    }
+    print_arr();
+}
+
+void Algorithims::print_arr()
+{   
+    for (int i = 0; i < arr_len; i++)
+    {
+        std::cout << arr[i] << ' ';
+    }
+    std::cout << '\n';
+}
+
+int Algorithims::find_smallest()
+{
+    int smallest = 0;
+    for (int i = 0; i < arr_len; i++)
+    {
+        if (arr[i] < arr[smallest])
+        {
+            smallest = i;
+        }
+    }
+    return smallest;
+}
+void Algorithims::insertion_sort()
+{
+    if (find_smallest() != 0)
+    {
+        arr_swap(0, find_smallest());
+    }
+    
+    std::cout<<"Sorted\n";
     double key;
     int j;
     for (int i = 1; i < arr_len ; i++)
     {
         key = arr[i];
         j   = i - 1;
-        while ((j > 0) && (arr[j]))
+        while ((j > 0) && (arr[j] > key))
         {
             arr[j + 1] = arr[j];
             j = j - 1;
         }
         arr[j + 1] = key;   
     }
+    print_arr();
 }
 //todo: needs more testing
 void Algorithims::multifunction_insertion_sort(int n)
@@ -110,7 +141,8 @@ void Algorithims::multifunction_insertion_sort(int n)
         }
         j++;
     }
-    std::cout<<"Sorted: n="<<n<<": "; test(n);
+    std::cout<<"Sorted: n="<<n<<": "; 
+    test(n);
 }
 
 

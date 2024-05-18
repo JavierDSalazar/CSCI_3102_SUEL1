@@ -44,19 +44,24 @@ class Algorithims
     //when one sort needs to be used
     Algorithims(
     std::string name,
-    int         arr_len,
-    std::string labels[]
+    int         arr_len
     )
     {
         this->name           = name;
-        this->f_ptrs         = f_ptrs;
-        this->labels         = labels;
+        this->arr_len        = arr_len;
+        this->arr            = (double*) malloc(arr_len * sizeof(double));
     };
     std::stringstream results;
-
-    void generate_random_array       ();
-    void swap                        (int idx1,     int idx2   );
-    void insertion_sort              (double arr[], int arr_len);
+    
+    //for singular arrays only
+    void arr_swap              (int idx1, int idx2);
+    void generate_random_array ();
+    void print_arr             ();
+    int  find_smallest         ();
+    void insertion_sort        ();
+    
+    //multifunction comparision only
+    void swap (int idx1, int idx2);
     void multifunction_insertion_sort(int n);
     void print_labels();
     //todo: rename

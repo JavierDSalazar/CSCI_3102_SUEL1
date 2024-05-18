@@ -3,12 +3,15 @@
 
 int main()
 {
-	double (*f_ptrs_1pt2_2[2]) (int n) = {&f1_chap1_excercise1pt2_2, &f2_chap1_excercise1pt2_2};
-	int     function_count_1pt2_2      = 2;
-	std::string labels_1pt2_2[2]                {"8n²", "64nlgn"};
-	double (*f_ptrs_1pt2_3[2]) (int n) = {&f1_chap1_excercise1pt2_3, &f2_chap1_excercise1pt2_3};
-	int     function_count_1pt2_3      = 2;
-	std::string labels_1pt2_3[2]              = {"100n²", "2ⁿ"};
+	double      (*f_ptrs_1pt2_2[2]) (int n) = {&f1_chap1_excercise1pt2_2, 
+                                               &f2_chap1_excercise1pt2_2};
+	int         function_count_1pt2_2       = 2;
+	std::string labels_1pt2_2[2]            = {"8n²", "64nlgn"};
+    
+	double      (*f_ptrs_1pt2_3[2]) (int n) = {&f1_chap1_excercise1pt2_3, 
+                                               &f2_chap1_excercise1pt2_3};
+	int         function_count_1pt2_3       = 2;
+	std::string labels_1pt2_3[2]            = {"100n²", "2ⁿ"};
     
     Algorithims al_1pt2_2 ("Chapter1exercise_1pt2_2", function_count_1pt2_2, f_ptrs_1pt2_2, labels_1pt2_2); //n=[2,27] is when 8n² is smaller
     for (int n = 0; n < 100; n++)
