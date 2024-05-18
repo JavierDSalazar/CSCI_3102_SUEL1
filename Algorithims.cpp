@@ -1,5 +1,5 @@
 //todo: handle special symbols properly https://stackoverflow.com/questions/70706794/how-to-print-superscript-3-in-c
-#include "Algorithims.hpp"
+#include "include/Algorithims.hpp"
 
 double factorial(int n)
 {

@@ -1,5 +1,5 @@
 #include "Algorithims.hpp"
-#include "chapter1_exercises.h"
+#include "include/chapter1_exercises.h"
 
 int main()
 {
