@@ -15,5 +15,8 @@ chapter3:
 %.o: %.cpp $(INC)/%.h
 	$(CC) -I$(INC) -c $< -o $@
 
+%.o: %.cpp $(INC)/%.hpp
+	$(CC) -I$(INC) -c $< -o $@
+
 clean:
 	rm -f *.o chapter1 chapter3
