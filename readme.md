@@ -9,6 +9,6 @@ So, usage would look like this:
 
 `chcp 65001`
 
-`gcc Algorithims.cpp`
+`g++ Algorithims.cpp`
 
 `a`
